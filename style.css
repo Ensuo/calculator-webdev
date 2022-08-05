@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed:wght@300&display=swap');
+
+
+html{
+    height:100%;
+    width:100%;
+}
+
+body{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgb(237, 190, 255)
+}
+
+#calculator{
+    height:500px;
+    width:300px;
+    border: 5px inset rgb(176, 194, 247);;
+    border-radius: 10px;
+    position:relative;
+
+
+    background: rgb(22, 28, 46);
+}
+
+#top{
+    height:35%;
+    width:300px;
+    position:absolute;
+}
+
+#display{
+    height:auto;
+    width:300px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    
+    text-align: right;
+    font-size: 35px;
+    color : rgb(255, 255, 255);
+    font-family: 'Roboto Condensed', sans-serif;
+    
+}
+
+#bottom{
+    height:65%;
+    width:300px;
+    border-radius:10px;
+    position:absolute;
+    bottom: 0;
+
+    background: rgb(27, 36, 63);
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons-grid{
+    height:auto;
+    display:flex;
+    flex-direction: column;
+}
+
+#operations{
+    height: 100%;
+    width: 100%;
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row{
+    display: flex;
+}
+
+.button{
+    background: rgba(43, 57, 99, 0.616);
+    width: 40px;
+    height: 40px;
+    border-radius:5px;
+    margin: 10px;
+
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+
+    text-align: center;
+    vertical-align: center;
+    line-height:45px;
+}
+
+.button:hover{
+    background: rgb(56, 74, 128);
+}

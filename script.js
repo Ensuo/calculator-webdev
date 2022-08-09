@@ -151,6 +151,18 @@ function changeSign(){
     }
 }
 
+//Function that executes the current math expression
+function equals(){
+    if(firstNumber != '' && secondNumber != '' && currentOperation != null){
+        firstNumber = calc(currentOperation, firstNumber, secondNumber);
+        if(isFloat){
+            isFloat = false;
+        }
+        displayValue = firstNumber;
+        secondNumber = "";
+    }
+}
+
 updateDisplay(displayValue); //Adds the 0 to display
 
 //Adds the functionality to each button
@@ -176,14 +188,7 @@ document.querySelectorAll(".button").forEach(button => {
                 values_calc('/');
                 break;
             case 'equal': //If the equal button is clicked, and all required values are given (first, second number and operation), then the new display value is the result.
-                if(firstNumber != '' && secondNumber != '' && currentOperation != null){
-                    firstNumber = calc(currentOperation, firstNumber, secondNumber);
-                    if(isFloat){
-                        isFloat = false;
-                    }
-                    displayValue = firstNumber;
-                    secondNumber = "";
-                }
+                equals();
                 break;
             case 'dot':
                 toFloat();
@@ -195,4 +200,23 @@ document.querySelectorAll(".button").forEach(button => {
         resetDisplay(); //After each operation, update the values being displayed
         updateDisplay(displayValue)
     });
+});
+
+//key presses
+document.addEventListener("keydown", (event) => {
+    const keyName = event.key;
+    
+    if(!isNaN(keyName)){ //if key pushed is a number
+        inputNumber(keyName);
+    }else if(keyName.match(/[+\-\/*]$/)){ //if key pushed is an operation symbol
+        values_calc(keyName);
+    }else if(keyName == '.'){//if key is a decimal dot
+        toFloat();
+    }else if(keyName == '=' || keyName == 'Enter'){ //if key is either an = symbol or an enter key
+        equals();
+    }else if(keyName == 'Escape'){
+        resetValues();
+    }
+    resetDisplay(); //After each operation, update the values being displayed
+    updateDisplay(displayValue)
 });

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed:wght@300&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 html{
     height:100%;
     width:100%;
@@ -14,18 +13,18 @@ body{
     justify-content: center;
     align-items: center;
 
-    background: rgb(237, 190, 255)
+    background: rgb(237, 190, 255);
 }
 
 #calculator{
     height:500px;
     width:300px;
-    border: 5px inset rgb(176, 194, 247);;
+    border: 5px solid rgb(23, 35, 53); 
     border-radius: 10px;
     position:relative;
 
 
-    background: rgb(22, 28, 46);
+    background: rgba(15,23,34,255);
 }
 
 #top{
@@ -44,18 +43,17 @@ body{
     text-align: right;
     font-size: 35px;
     color : rgb(255, 255, 255);
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     
 }
 
 #bottom{
     height:65%;
     width:300px;
-    border-radius:10px;
     position:absolute;
     bottom: 0;
 
-    background: rgb(27, 36, 63);
+    background: rgba(29,41,58,255);
 
     display:flex;
     justify-content: center;
@@ -81,14 +79,17 @@ body{
 }
 
 .button{
-    background: rgba(43, 57, 99, 0.616);
+    background: rgba(53,67,87,255);
+    color: rgb(255, 255, 255);
     width: 50px;
     height: 50px;
-    border-style: solid;
     margin: -1px;
+
+    border-style: solid;
+    border-color: rgba(12, 18, 34, 0.616);
     
-    font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
 
     text-align: center;
     vertical-align: center;
@@ -96,13 +97,20 @@ body{
 }
 
 .button:hover{
-    background: rgb(56, 74, 128);
+    background: rgba(108,99,255,255);
+}
+
+
+.reset{
+    background: rgb(241, 55, 55);
 }
 
 .equal{
     width:104px;
+    background: rgb(241, 139, 55);
 }
 
 .zero{
     width:104px;
+
 }
